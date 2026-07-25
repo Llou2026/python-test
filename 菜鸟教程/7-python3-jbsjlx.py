@@ -73,3 +73,21 @@ print(type(tup4))
 #元组中的元素是不允许修改的，但是我们可以对元组进行连接组合
 new_tup=tup2+tup3
 print(new_tup)
+#元组中的元素值是不允许删除的,只能使用del语句删除整个元组
+del tup2#删除整个元组
+
+#--------------------------字典-------------------------
+#创建空字典
+#使用大括号来创建空字典
+emptyDict={}
+print(type(emptyDict))
+#使用内建函数dict()创建字典
+empty_dict = dict()
+print(empty_dict)
+print("Length:",len(empty_dict))#查看字典长度
+print(type(empty_dict))#查看类型
+#访问字典里的值
+tinydict = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
+print("tinydict['Name]:",tinydict['Name'])
+print("tinydict['Age]:",tinydict['Age'])
+tinydict['mi']

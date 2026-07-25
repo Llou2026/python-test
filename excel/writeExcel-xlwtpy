@@ -1,0 +1,52 @@
+#----------------------xlwt模块介绍（写入）--------------------
+#安装pip install xlwt
+# 支持excel 2003版到excel 2013版保存的格式
+# 只支持xls格式，不支持07版以后的xlsx格式
+# 我们在写作的时候呢，需要去注意一下啊。
+import xlwt
+title_style= xlwt.XFStyle()#初始化样式
+#设置字体
+title_font=xlwt.Font()
+title_font.name="宋体"
+title_font.bold=True #加粗
+title_font.height = 11*20 #11是字号 20是单位
+title_font.colour_index=0x08 #字体颜色
+title_style.font=title_font
+#对齐方式
+cell_align= xlwt.Alignment()#初始化
+cell_align.horz=0x02 #设置对齐方式，水平方向居中对齐
+cell_align.vert=0x01 #设置对齐方式，垂直方向居中对齐
+title_style.alignment=cell_align
+#设置边框
+borders = xlwt.Borders()
+borders.right=xlwt.Borders.DASHED
+borders.bottom=xlwt.Borders.DOTTED
+title_style.borders=borders
+#背景颜色
+date_style = xlwt.XFStyle()
+bgcolor = xlwt.Pattern()
+bgcolor.pattern=xlwt.Pattern.SOLID_PATTERN # 设置颜色背景模式
+bgcolor.pattern_fore_colour=22 #设置颜色取值
+date_style.pattern=bgcolor
+#第一步创建工作簿
+wb=xlwt.Workbook()
+#第二部创建工作表
+ws=wb.add_sheet("CNY")
+#第三步：填充工作表内容
+ws.write_merge(0,1,0,5,"2019年货币兑换表",title_style)#行前两行合并，列前5列合并
+#写入货币数据
+data=(('Date',"英镑","人民币","港币","日元","美元"),
+      ("01/01/2019",8.722551,1,0.877885,0.062772,6.8759),
+      ('02/01/2019',8.634922,1,0.875731,0.062723,6.8801))#元组
+for i, item in enumerate(data):#enumerate 返回一个索引（从0开始）和一个值
+    for j,val in enumerate(item):
+        if j==0:
+            ws.write(i+2,j,val,date_style)
+        else:
+            ws.write(i+2,j,val)#write(行,列，写入的内容)
+#创建第二个工作表
+ws_image = wb.add_sheet('image')
+#写入图片
+ws_image.insert_bitmap("2017.bmp",0,0)
+#第四步：保存文件
+wb.save("2019-CNY.xls")

@@ -38,7 +38,10 @@ print('可以通过下标访问字符串某个字符，但是不能赋值'+my_st
 print('0、空字符串、空列表、空元组等被视为 False。')
 
 
-#列表List
+#列表List,可变，有序，允许重复，最灵活频繁增删改除
+#addend在末尾添加列表
+#pop 用索引删除元素并返回
+#del list[2] #删除第三个元素
 my_list= ['abcd', 786, 2.23, 'runoob', 70.2]
 tinylist = [123,'runoob']
 print(my_list)#打印整个列表
@@ -46,5 +49,17 @@ print(my_list[0])#打印第一个元素
 print(my_list[-4])
 color_list = ['red', 'green', 'blue', 'yellow', 'white', 'black']
 print(color_list[1:-2])#从第二位开始（包含）截取到倒数第二位（不包含）
-color_list[0]='红色'
+#color_list[0]='红色'
 print(color_list[0])
+color_list.append('蓝色')
+print(color_list)
+result=color_list.pop(-1)
+print(result)
+print('red' in color_list)#用 in 判断 元素是否在与列表中
+color_list+=['红色','白色','黄色']#列表支持拼接操作
+print(color_list)
+#支持嵌套列表,就像c语言里的二维数组
+color_list=[['red', 'red','green', 'blue', 'yellow', 'white', 'black'],['红色','白色','黄色']]
+print(color_list)
+#统计列表中某个元素的数量
+print(color_list[0].count('red'))

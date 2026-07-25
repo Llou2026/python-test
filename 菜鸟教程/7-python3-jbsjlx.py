@@ -63,3 +63,13 @@ color_list=[['red', 'red','green', 'blue', 'yellow', 'white', 'black'],['红色'
 print(color_list)
 #统计列表中某个元素的数量
 print(color_list[0].count('red'))
+#-------------------元组-----------------------
+tup1=()#创建一个空元组
+tup2=(1, 2, 3, 4, 5 )
+tup3="a", "b", "c", "d"#不需要括号也可以
+print(type(tup3))
+tup4=(40,)#元组中只包含一个元素时，需要在元素后面添加逗号 , ，否则括号会被当作运算符使用
+print(type(tup4))
+#元组中的元素是不允许修改的，但是我们可以对元组进行连接组合
+new_tup=tup2+tup3
+print(new_tup)

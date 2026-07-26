@@ -130,3 +130,5 @@ print(tinydict.items())
 for key,val in tinydict.items():
     print('key:',key)
     print('value:',val)
+result = tinydict.setdefault('name')
+print(result)

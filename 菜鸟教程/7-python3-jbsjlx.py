@@ -134,3 +134,6 @@ for key,val in tinydict.items():
 result = tinydict.setdefault('name')
 print(result)
 #字典的update()函数 批量合并、覆盖更新字典。
+test_str = ['a']
+test_str.extend('bcdefghijklmnopqrstuvwxyz')
+print(test_str)

@@ -137,3 +137,22 @@ print(result)
 test_str = ['a']
 test_str.extend('bcdefghijklmnopqrstuvwxyz')
 print(test_str)
+'''
+append(x)：x 整体作为1 个元素加入列表
+extend(x)：把 x 里面每一个元素拆分，全部追加进列表
+想合并两个列表、不要嵌套，就用 extend()
+'''
+
+#----------------------------集合-----------------------------------
+print('--------------------------------集合-----------------------------')
+set1={1,2,3,4} #直接使用大括号创建集合
+set2=set([4,5,6,7])#使用set（）函数从列表创建集合
+print('创建一个空集合必须使用set()而不是{}，因为{}是用来创建一个空字典的')
+#列表的去重功能
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)#这里演示的是去重功能
+#输出{'orange', 'apple', 'banana', 'pear'}
+#这个功能可用于列表的快速去重
+arr=["a", "b", "a", "c", "b"]
+new_arr = list(set(arr))
+print(new_arr)

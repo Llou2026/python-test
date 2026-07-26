@@ -130,5 +130,7 @@ print(tinydict.items())
 for key,val in tinydict.items():
     print('key:',key)
     print('value:',val)
+#tinydict.setdefault(keys,value)获取值，如果键不存在会新建keys 默认值就是你给的value
 result = tinydict.setdefault('name')
 print(result)
+#字典的update()函数 批量合并、覆盖更新字典。

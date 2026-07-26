@@ -90,4 +90,30 @@ print(type(empty_dict))#查看类型
 tinydict = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
 print("tinydict['Name]:",tinydict['Name'])
 print("tinydict['Age]:",tinydict['Age'])
-tinydict['mi']
+#tinydict['mi'] 如果字典里没有建访问数据 会出现错误
+
+#修改字典
+tinydict['Age'] = 8  #更新Age
+tinydict['School']='菜鸟教程'#添加信息
+print("tinydict['Age']:",tinydict['Age'])
+print("tinydict['School']:",tinydict['School'])
+#删除字典元素
+del tinydict['Name']#删除键Name
+tinydict.clear()#清空字典
+del tinydict#删除字典
+#tinydict = {'Name': ['Runoob'], 'Age': 7}
+seq = ('name', 'age', 'sex')
+value=['tinydict']
+tinydict = dict.fromkeys(seq,value)
+#value是所有值的初始值，不能一一对应赋值的
+print(tinydict)
+#输出的结果是{'name': ['Llou', '18', 'boy'], 'age': ['Llou', '18', 'boy'], 'sex': ['Llou', '18', 'boy']}
+dict1=tinydict
+dict2=tinydict.copy()
+dict1['name'][0]='dict1'
+dict2['name'][0]='dict2'
+print(tinydict['name'][0],dict1['name'][0],dict2['name'][0])
+import copy
+dict3=copy.deepcopy(tinydict)
+dict3['name'][0]='dict3'
+print(tinydict['name'][0])

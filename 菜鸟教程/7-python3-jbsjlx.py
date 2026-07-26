@@ -108,12 +108,25 @@ tinydict = dict.fromkeys(seq,value)
 #value是所有值的初始值，不能一一对应赋值的
 print(tinydict)
 #输出的结果是{'name': ['Llou', '18', 'boy'], 'age': ['Llou', '18', 'boy'], 'sex': ['Llou', '18', 'boy']}
-dict1=tinydict
-dict2=tinydict.copy()
+dict1=tinydict#直接赋值，指向同一个内存
+dict2=tinydict.copy()#浅拷贝，只拷贝父对象，不会拷贝对象的内部子对象，而是直接引用
 dict1['name'][0]='dict1'
 dict2['name'][0]='dict2'
 print(tinydict['name'][0],dict1['name'][0],dict2['name'][0])
 import copy
-dict3=copy.deepcopy(tinydict)
+dict3=copy.deepcopy(tinydict)#深拷贝
 dict3['name'][0]='dict3'
 print(tinydict['name'][0])
+
+#判断键是否存在
+print('name' in tinydict)
+#判断值是否存在
+print('--------------')
+print(tinydict.values())
+print('--------------')
+print(any('name' in val for val in tinydict.values()))
+#items方法的使用,在for循环中可以同时拿到keys 和values
+print(tinydict.items())
+for key,val in tinydict.items():
+    print('key:',key)
+    print('value:',val)

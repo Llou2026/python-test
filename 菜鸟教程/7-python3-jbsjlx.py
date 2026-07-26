@@ -161,3 +161,11 @@ print(new_arr)
 筛选重复 ID、对比两份名单差异。'''
 print('orange' in basket) #快速判断元素是否在集合内
 print('我没有在集合内，所以输出false' in basket)
+#下面展示两个集合间的运算
+a=set('abracadabra')#{'b', 'a', 'r', 'd', 'c'}
+b=set('alacazam')#{'l', 'a', 'z', 'm', 'c'}
+print(a-b)#集合a中包含而集合b中不包含的元素
+print(b-a)#集合b中包含而集合a中不包含的元素
+print(a|b)#并集
+print(a&b)#交集保留两边重复的元素
+print(a^b)#对称差集：（全部并集） − （交集）

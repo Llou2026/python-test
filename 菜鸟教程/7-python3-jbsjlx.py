@@ -156,3 +156,8 @@ print(basket)#这里演示的是去重功能
 arr=["a", "b", "a", "c", "b"]
 new_arr = list(set(arr))
 print(new_arr)
+'''实战用途：
+找出两个列表相同数据、找出独有的数据；
+筛选重复 ID、对比两份名单差异。'''
+print('orange' in basket) #快速判断元素是否在集合内
+print('我没有在集合内，所以输出false' in basket)
